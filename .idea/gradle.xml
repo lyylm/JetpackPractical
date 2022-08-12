@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/databindingtest" />
             <option value="$PROJECT_DIR$/livedatatext" />
             <option value="$PROJECT_DIR$/screenorientation" />
             <option value="$PROJECT_DIR$/viewmodeltest" />
