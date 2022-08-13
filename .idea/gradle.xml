@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/livedatatext" />
             <option value="$PROJECT_DIR$/score" />
             <option value="$PROJECT_DIR$/screenorientation" />
+            <option value="$PROJECT_DIR$/viewmodelrestore" />
             <option value="$PROJECT_DIR$/viewmodeltest" />
           </set>
         </option>
