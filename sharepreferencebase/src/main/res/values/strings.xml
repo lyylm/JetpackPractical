@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SharePreferenceBase</string>
+    <string name="button1">方式一</string>
+    <string name="button2">方式二</string>
+    <string name="button3">方式三</string>
+
+    <!--创建sharedPreference的字符串资源，便于统一管理-->
+    <string name="MY_DATA">my_data</string>
+    <string name="MY_KEY">my_key</string>
+</resources>
