@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NavigationDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textViewHome">Home</string>
+    <string name="textViewDetail">Detail</string>
+    <string name="button2">home</string>
+    <string name="button1">Detail</string>
+</resources>
