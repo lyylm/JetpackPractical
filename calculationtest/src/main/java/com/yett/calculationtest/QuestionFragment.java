@@ -71,6 +71,7 @@ public class QuestionFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_question, container, false);
         MyViewModel myViewModel = new ViewModelProvider(requireActivity()).get(MyViewModel.class);
         myViewModel.generator();
+        myViewModel.getCurrentScore().setValue(0);//每次重新打开时，当前分数清零
         FragmentQuestionBinding binding = DataBindingUtil.inflate(inflater,R.layout.fragment_question,container,false);
         binding.setData(myViewModel);
         binding.setLifecycleOwner(requireActivity());
@@ -136,6 +137,9 @@ public class QuestionFragment extends Fragment {
         binding.buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (builder.length() == 0){
+                    builder.append("-1");
+                }
                if (Integer.valueOf(builder.toString()).intValue() == myViewModel.getAnswer().getValue()){
                     myViewModel.answerCorrect();
                     builder.setLength(0);

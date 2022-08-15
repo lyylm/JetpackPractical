@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
             });
             AlertDialog dialog = builder.create();
             dialog.show();
-        }else {
+        }else if(controller.getCurrentDestination().getId() == R.id.titleFragment){
+            finish();//表示结束当前的Activity
+        } else {
             controller.navigate(R.id.titleFragment);
         }
         return super.onSupportNavigateUp();

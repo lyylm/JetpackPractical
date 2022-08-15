@@ -15,8 +15,10 @@
         <entry key="..\:/AndroidProjects/JetpackPractical/databindingtest/src/main/res/layout/activity_main.xml" value="0.2653985507246377" />
         <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/drawable/ic_sentiment_dissatisfied_black_24dp.xml" value="0.205" />
         <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/drawable/ic_sentiment_satisfied_black_24dp.xml" value="0.205" />
-        <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout-land/fragment_question.xml" value="0.15696649029982362" />
-        <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout-land/fragment_title.xml" value="0.15696649029982362" />
+        <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout-land/fragment_lose.xml" value="0.3090828924162258" />
+        <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout-land/fragment_question.xml" value="0.5" />
+        <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout-land/fragment_title.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout-land/fragment_win.xml" value="0.3090828924162258" />
         <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout/fragment_lose.xml" value="0.36614583333333334" />
         <entry key="..\:/AndroidProjects/JetpackPracticalTest/calculationtest/src/main/res/layout/fragment_question.xml" value="0.36614583333333334" />
