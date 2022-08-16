@@ -24,5 +24,5 @@ public interface WordDao {
     void deleteAllWords();
 
     @Query("SELECT * FROM Word ORDER BY ID DESC")
-    LiveData<List<Word>> getAllWordsLive();
+    LiveData<List<Word>> getAllWordsLive();//会自动异步获取数据
 }

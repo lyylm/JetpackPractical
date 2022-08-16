@@ -37,6 +37,7 @@ public class WordRepository {
         new DeleteAllAsyncTask(this.wordDao).execute();
     }
 
+    //静态内部类是为了防止内存泄露
     static class InsertAsyncTask extends AsyncTask<Word,Void,Void>{
         private WordDao wordDao;
 
