@@ -1,4 +1,4 @@
-package com.example.roombasicstep3;
+package com.example.roommigration;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -11,41 +11,42 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private WordViewModel wordViewModel;
     Button buttonInsert,buttonClear;
     Switch aSwitch;
-
     RecyclerView recyclerView;
-    MyAdapter myAdapter1,myAdapter2;
+
+    WordViewModel wordViewModel;
+
+    MyAdapter myAdapterCardView, myAdapterNormal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = findViewById(R.id.recyclerView);
-        buttonClear = findViewById(R.id.buttonClear);
-        buttonInsert = findViewById(R.id.buttonInsert);
-        aSwitch = findViewById(R.id.switch1);
+
+        this.buttonClear = findViewById(R.id.buttonClear);
+        this.buttonInsert = findViewById(R.id.buttonInsert);
+        this.aSwitch = findViewById(R.id.switch1);
+        this.recyclerView = findViewById(R.id.recycleView);
 
         this.wordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
 
-        myAdapter1 = new MyAdapter(true);
-        myAdapter2 = new MyAdapter(false);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(myAdapter2);
+        myAdapterCardView = new MyAdapter(true);
+        myAdapterNormal = new MyAdapter(false);
+        this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        this.recyclerView.setAdapter(myAdapterNormal);
 
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    recyclerView.setAdapter(myAdapter1);
+                    recyclerView.setAdapter(myAdapterCardView);
                 }else {
-                    recyclerView.setAdapter(myAdapter2);
+                    recyclerView.setAdapter(myAdapterNormal);
                 }
             }
         });
@@ -53,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         this.wordViewModel.getAllWordsLive().observe(this, new Observer<List<Word>>() {
             @Override
             public void onChanged(List<Word> words) {
-               myAdapter1.setAllWords(words);
-               myAdapter1.notifyDataSetChanged();
-               myAdapter2.setAllWords(words);
-               myAdapter2.notifyDataSetChanged();
+                myAdapterCardView.setAllWords(words);
+                myAdapterCardView.notifyDataSetChanged();
+                myAdapterNormal.setAllWords(words);
+                myAdapterNormal.notifyDataSetChanged();
             }
         });
 
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonClear.setOnClickListener(new View.OnClickListener() {
+        this.buttonClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 wordViewModel.deleteAllWords();

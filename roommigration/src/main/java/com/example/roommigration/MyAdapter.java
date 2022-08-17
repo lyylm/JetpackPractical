@@ -1,4 +1,4 @@
-package com.example.roombasicstep3;
+package com.example.roommigration;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -28,7 +28,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //return null;
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View itemView;
         if (useCardView){
@@ -41,14 +40,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Word word = allWords.get(position);
         holder.textViewNumber.setText(String.valueOf(position+1));
-        holder.textViewEnglish.setText(word.getWord());
-        holder.textViewChinese.setText(word.getChineseMeaning());
+        holder.textViewEnglish.setText(this.allWords.get(position).getWord());
+        holder.textViewChinese.setText(this.allWords.get(position).getChineseMeaning());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Uri uri = Uri.parse("https://dict.youdao.com/dict?le=eng&q="+ holder.textViewEnglish.getText());
                 Uri uri = Uri.parse("https://dict.youdao.com/result?word="+ holder.textViewEnglish.getText()+"&lang=en");
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(uri);
@@ -59,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return allWords.size();
+        return this.allWords.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
