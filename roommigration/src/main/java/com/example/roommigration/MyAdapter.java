@@ -46,6 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //这种方式不需要开启网络访问权限，就可以访问网络
                 Uri uri = Uri.parse("https://dict.youdao.com/result?word="+ holder.textViewEnglish.getText()+"&lang=en");
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(uri);

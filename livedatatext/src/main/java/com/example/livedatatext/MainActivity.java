@@ -1,7 +1,6 @@
 package com.example.livedatatext;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textViewNumber);
         imageButtonLike = findViewById(R.id.imageButton1);
         imageButtonDislike = findViewById(R.id.imageButton2);
 

@@ -6,8 +6,8 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:orientation="vertical">
-    <!--布局中一定要注意，让最顶层的容器wrapContent，例如这里就是让linearLayout高设置为wrap_content-->
-    <!--如果想出现卡片的效果，就需要对CardView设置Margin，一定不能设置错误，否则显示不出相应的效果-->
+    <!--布局中一定要注意，让最顶层的容器wrapContent，例如这里就是让linearLayout高设置为wrap_content，并对其设置clickable为true-->
+    <!--如果想出现卡片的效果，就需要对CardView设置Margin，一定不能设置错误，否则显示不出相应的效果；设置其背景为selectitemback-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

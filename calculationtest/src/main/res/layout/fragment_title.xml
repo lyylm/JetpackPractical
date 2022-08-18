@@ -29,7 +29,7 @@
             app:layout_constraintGuide_percent="0.9" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewEnglish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_message"
@@ -70,7 +70,7 @@
             app:layout_constraintVertical_bias="0.853" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{@string/high_score_message(data.highScore)}"

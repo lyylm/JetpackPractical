@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textViewNumber);
         if (savedInstanceState!=null){
             String s = savedInstanceState.getString("key");
             textView.setText(s);

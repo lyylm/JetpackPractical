@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         myViewModel = new ViewModelProvider(this).get(MyViewModel.class);
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textViewNumber);
         button1 = findViewById(R.id.button);
         button2 = findViewById(R.id.button2);
 

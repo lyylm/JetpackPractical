@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         buttonClear = findViewById(R.id.buttonClear);
         buttonDelete = findViewById(R.id.buttonDelete);
 
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textViewNumber);
 
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override

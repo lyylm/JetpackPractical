@@ -63,7 +63,7 @@ public class DetailFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_detail,container,false);
         String temp = getArguments().getString("name");
         String name = getArguments().getString("my_name");
-        TextView textView = view.findViewById(R.id.textView);
+        TextView textView = view.findViewById(R.id.textViewNumber);
         textView.setText(name);
         return view;
     }

@@ -1,15 +1,10 @@
 package com.example.roombasicstep2;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Room;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         //allWordsLive = wordDao.getAllWordsLive();
         allWordsLive = wordViewModel.getAllWordsLive();
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textViewNumber);
         allWordsLive.observe(this, new Observer<List<Word>>() {
             @Override
             public void onChanged(List<Word> words) {
