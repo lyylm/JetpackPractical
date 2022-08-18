@@ -29,6 +29,7 @@
             <option value="$PROJECT_DIR$/viewmodelrestore" />
             <option value="$PROJECT_DIR$/viewmodelshp" />
             <option value="$PROJECT_DIR$/viewmodeltest" />
+            <option value="$PROJECT_DIR$/words" />
           </set>
         </option>
       </GradleProjectSettings>
