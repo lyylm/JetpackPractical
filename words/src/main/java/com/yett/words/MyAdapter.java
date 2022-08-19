@@ -34,8 +34,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View itemView = layoutInflater.inflate(R.layout.cell_normal,parent,false);
-
+        View itemView;
+        if (useCardView){
+            itemView = layoutInflater.inflate(R.layout.cell_card,parent,false);
+        }else {
+            itemView = layoutInflater.inflate(R.layout.cell_normal,parent,false);
+        }
+        //因为在增加数据的时候就会执行一次，也就是会被多次执行，会造成资源的浪费
         MyViewHolder holder = new MyViewHolder(itemView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,21 +51,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 holder.itemView.getContext().startActivity(intent);
             }
         });
-
-        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Word word = this.allWords.get(position);
-        holder.textViewNumber.setText(String.valueOf(position+1));
-        holder.textViewEnglish.setText(word.getWord());
-        holder.textViewChinese.setText(word.getChineseMeaning());
-        holder.aSwitchChineseInvisible.setOnCheckedChangeListener(null);
-
+        //TODO 学习tag的使用，可以提前使用后面生成的数据
         holder.aSwitchChineseInvisible.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Word word = (Word) holder.itemView.getTag(R.id.word_for_view_holder);
                 if (isChecked){
                     holder.textViewChinese.setVisibility(View.GONE);
                     word.setChineseInvisible(true);
@@ -71,6 +66,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 wordViewModel.updateWords(word);
             }
         });
+
+        return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        final Word word = this.allWords.get(position);
+        holder.itemView.setTag(R.id.word_for_view_holder,word);
+        holder.textViewNumber.setText(String.valueOf(position+1));
+        holder.textViewEnglish.setText(word.getWord());
+        holder.textViewChinese.setText(word.getChineseMeaning());
+        //holder.aSwitchChineseInvisible.setOnCheckedChangeListener(null);
+
+        if (word.isChineseInvisible()){
+            holder.textViewChinese.setVisibility(View.GONE);
+        }else{
+            holder.textViewChinese.setVisibility(View.VISIBLE);
+        }
+        holder.aSwitchChineseInvisible.setChecked(word.isChineseInvisible());
+
     }
 
     @Override
