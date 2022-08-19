@@ -60,7 +60,11 @@
         <entry key="..\:/AndroidProjects/JetpackPracticalTest/sharepreferencebase/src/main/res/layout/activity_main.xml" value="0.26666666666666666" />
         <entry key="..\:/AndroidProjects/JetpackPracticalTest/viewmodelrestore/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/AndroidProjects/JetpackPracticalTest/viewmodelshp/src/main/res/layout/activity_main.xml" value="0.21" />
+        <entry key="..\:/AndroidProjects/Test/words/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/AndroidProjects/Test/words/src/main/res/layout/cell_normal.xml" value="0.5" />
+        <entry key="..\:/AndroidProjects/Test/words/src/main/res/layout/fragment_add.xml" value="0.36614583333333334" />
+        <entry key="..\:/AndroidProjects/Test/words/src/main/res/layout/fragment_words.xml" value="0.36614583333333334" />
+        <entry key="..\:/AndroidProjects/Test/words/src/main/res/menu/main_menu.xml" value="0.33" />
       </map>
     </option>
   </component>

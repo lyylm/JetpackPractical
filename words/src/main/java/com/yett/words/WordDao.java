@@ -25,6 +25,10 @@ public interface WordDao {
     @Query("DELETE FROM WORD")
     void deleteAllWords();
 
-    @Query("SELECT * FROM Word")
+    @Query("SELECT * FROM Word ORDER BY ID DESC")
     LiveData<List<Word>> getAllWordsLive();
+
+    //使用Like就是模糊查询
+    @Query("SELECT * FROM WORD WHERE english_word LIKE :patten ORDER BY ID DESC")
+    LiveData<List<Word>> findWordsWithPatten(String patten);
 }

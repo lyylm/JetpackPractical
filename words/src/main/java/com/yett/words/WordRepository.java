@@ -21,6 +21,11 @@ public class WordRepository {
         return allWordsLive;
     }
 
+    public LiveData<List<Word>> findWordsWithPatten(String patten){
+        //模糊查询就需要前后添加%
+        return this.wordDao.findWordsWithPatten("%"+patten+"%");
+    }
+
     public void insertWords(Word... words){
         new InsertAsyncTask(wordDao).execute(words);
     }

@@ -19,6 +19,10 @@ public class WordViewModel extends AndroidViewModel {
         return this.wordRepository.getAllWordsLive();
     }
 
+    public LiveData<List<Word>> findWordsWithPatten(String patten){
+        return wordRepository.findWordsWithPatten(patten);
+    }
+
     public void insertWords(Word... words){
         this.wordRepository.insertWords(words);
     }
