@@ -33,7 +33,7 @@ public class WordRepository {
     public void deleteWords(Word... words){
         new DeleteWordsAsyncTask(wordDao).execute(words);
     }
-    public void deleteAllWords(Word... words){
+    public void deleteAllWords(){
         new DeleteAllAsyncTask(wordDao).execute();
     }
 
