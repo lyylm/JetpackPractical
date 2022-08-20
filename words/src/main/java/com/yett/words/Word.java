@@ -4,8 +4,23 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 @Entity
 public class Word {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Word)) return false;
+        Word word1 = (Word) o;
+        return id == word1.id && chineseInvisible == word1.chineseInvisible && Objects.equals(word, word1.word) && Objects.equals(chineseMeaning, word1.chineseMeaning);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, word, chineseMeaning, chineseInvisible);
+    }
+
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name = "english_word")
