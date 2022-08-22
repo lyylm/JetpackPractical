@@ -83,4 +83,8 @@ class Score implements Serializable{
     public void setChinese(int chinese) {
         this.chinese = chinese;
     }
+
+    public String getGrade() {
+        return grade;
+    }
 }
