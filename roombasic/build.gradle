@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 32
@@ -58,8 +59,13 @@ dependencies {
 
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // optional - Paging 3 Integration
     //implementation "androidx.room:room-paging:2.5.0-alpha02"
 
+}
+repositories {
+    mavenCentral()
 }
